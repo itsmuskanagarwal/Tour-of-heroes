@@ -1,0 +1,25 @@
+<!-- As the data is fetched it will show a message-->
+<!-- Using clear button we can clear all the messages-->
+<!-- ngFor helps in looping messages-->
+<!-- Message_service_object is a service object of a service file -->
+
+
+<div *ngIf="message_service_object.messages.length">
+
+        <div class="a">
+                Messages
+        </div>
+        <button type="button" class="clear"
+            (click)="message_service_object.clear()">
+            Clear messages
+        </button>
+        <br><br>
+        <div class="b">
+                <div *ngFor='let message of message_service_object.messages'> {{message}} 
+
+                </div>
+        </div>
+  
+  </div>
+
+  

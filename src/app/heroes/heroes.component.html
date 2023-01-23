@@ -1,0 +1,40 @@
+<!-- Here we are calling data from hero compnent TS of type Hero interface in Hero TS from the list -->
+
+<h2>My Heroes</h2>
+
+<div>
+  <label for="new-hero">Hero name : </label>
+  <input id="new-hero" #heroName /> &nbsp;&nbsp;
+
+  <!-- (click) passes input value to add() and then clears the input -->
+
+  <div class="temp">
+    <button
+      type="button"
+      class="add-button"
+      (click)="add(heroName.value); heroName.value = ''"
+    >
+      Add hero
+    </button>
+  </div>
+</div>
+
+<br />
+
+<ul class="heroes">
+  <li *ngFor="let hero of list_of_hero">
+    <button type="button" routerLink="/detail/{{ hero.id }}">
+      <!-- By clicking the any hero button it will transport to the link-->
+      <span class="badge">{{ hero.id }}</span>
+      <span class="name">{{ hero.name }}</span>
+    </button> &nbsp;&nbsp;
+
+    <div class="temp_delete">
+    <button 
+      type="button"
+      class="delete"
+      title="delete hero"
+      (click)="delete(hero)">X
+    </button></div>
+  </li>
+</ul>

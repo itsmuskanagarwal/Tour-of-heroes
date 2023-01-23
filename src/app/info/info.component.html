@@ -1,0 +1,16 @@
+<!-- displaying details of selected hero/cuurent hero beneath the buttons(list of herores)-->
+
+<div *ngIf="current_hero">
+    <h2>{{current_hero.name | uppercase}} Details</h2>
+    <h4>
+        <div>Id : {{current_hero.id}}</div>
+        <div><br>
+            <label for="hero-name">Hero name : </label>
+             <input id="hero-name" [(ngModel)]="current_hero.name" placeholder="name">
+         </div>
+    </h4>
+  </div>
+
+  <button type="button" (click)="goBack()">Back</button>
+
+  <button type="button" (click)="save()">Save</button>
